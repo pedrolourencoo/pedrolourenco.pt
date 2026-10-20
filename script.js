@@ -633,25 +633,80 @@
       });
     }
 
-    $$('a[href^="#"]').forEach((anchor) => {
+    /* Âncoras sem "#" na URL.
+       - Na mesma página: scroll suave até à secção.
+       - Vindo de outra página (ex.: estudo de caso -> "/#projects"):
+         guarda o destino, navega para "/" e faz o scroll depois de carregar. */
+    const PENDING_KEY = 'pendingScrollTarget';
+    const HEADER_OFFSET = 70;
+    const isHome = ['/', '/index', '/index.html'].includes(window.location.pathname);
+
+    const findTarget = (id) => {
+      try { return $('#' + id); } catch (err) { return null; }
+    };
+
+    const scrollToId = (id, smooth) => {
+      const behavior = smooth ? 'smooth' : 'auto';
+      const el = findTarget(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+        window.scrollTo({ top, behavior });
+        return true;
+      }
+      if (id === 'hero' && isHome) {
+        window.scrollTo({ top: 0, behavior });
+        return true;
+      }
+      return false;
+    };
+
+    $$('a[href^="#"], a[href^="/#"]').forEach((anchor) => {
       anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (!targetId || targetId === '#') return;
+        // Deixa ctrl/cmd/shift/botão do meio abrir em novo separador normalmente
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
 
-        let targetElement = null;
-        try { targetElement = $(targetId); } catch (err) { targetElement = null; }
+        const href = this.getAttribute('href') || '';
+        const id = href.replace(/^\/?#/, '');
+        if (!id) return;
 
-        if (targetElement) {
+        // 1) O destino existe nesta página -> scroll suave, sem "#"
+        if (findTarget(id) || (id === 'hero' && isHome)) {
           e.preventDefault();
           closeMenu();
+          scrollToId(id, true);
+          return;
+        }
 
-          const headerOffset = 70;
-          const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        // 2) O destino está na home e estamos noutra página -> vai para "/" e faz scroll lá
+        if (href.startsWith('/#')) {
+          try {
+            sessionStorage.setItem(PENDING_KEY, id);
+          } catch (err) {
+            return; // sem sessionStorage: comportamento normal (com "#")
+          }
+          e.preventDefault();
+          closeMenu();
+          window.location.assign('/');
         }
       });
     });
+
+    // Chegámos à home vindos de outra página com um destino pendente
+    let pending = null;
+    try {
+      pending = sessionStorage.getItem(PENDING_KEY);
+      sessionStorage.removeItem(PENDING_KEY);
+    } catch (err) { pending = null; }
+
+    if (pending) {
+      const go = () => scrollToId(pending, false);
+      go();
+      if (document.readyState === 'complete') {
+        setTimeout(go, 60);
+      } else {
+        window.addEventListener('load', () => setTimeout(go, 60), { once: true });
+      }
+    }
   }
 
   /* ------------------------------------------------------------------
