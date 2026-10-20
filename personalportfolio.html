@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta_title_case">Portfólio Pessoal — Pedro Lourenço</title>
+  <meta name="description" content="Estudo de caso do meu portfólio pessoal: design, código, infraestrutura e formulário serverless, tudo construído com HTML, CSS e JavaScript puro." data-i18n-attr="content:meta_desc_case">
+  <meta name="keywords" content="Pedro Lourenço, Portfólio Web, Case Study, HTML5, CSS3, JavaScript Vanilla, Vercel, Cloudflare, Web3Forms">
+  <meta name="author" content="Pedro Lourenço">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#060b1f">
+
+  <!-- Canonical & Language Alternates -->
+  <link rel="canonical" href="https://pedrolourenco.pt/personalportfolio.html">
+  <link rel="alternate" hreflang="pt" href="https://pedrolourenco.pt/personalportfolio.html">
+  <link rel="alternate" hreflang="en" href="https://pedrolourenco.pt/personalportfolio.html">
+  <link rel="alternate" hreflang="x-default" href="https://pedrolourenco.pt/personalportfolio.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pedrolourenco.pt/personalportfolio.html">
+  <meta property="og:site_name" content="Pedro Lourenço — Portfolio">
+  <meta property="og:title" content="Portfólio Pessoal — Pedro Lourenço" data-i18n-attr="content:meta_title_case">
+  <meta property="og:description" content="Estudo de caso do meu portfólio pessoal: design, código, infraestrutura e formulário serverless, tudo construído com HTML, CSS e JavaScript puro." data-i18n-attr="content:meta_desc_case">
+  <meta property="og:image" content="https://pedrolourenco.pt/assets/projects/portfolio-mockup.jpg">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfólio Pessoal — Pedro Lourenço" data-i18n-attr="content:meta_title_case">
+  <meta name="twitter:description" content="Estudo de caso do meu portfólio pessoal: design, código, infraestrutura e formulário serverless, tudo construído com HTML, CSS e JavaScript puro." data-i18n-attr="content:meta_desc_case">
+  <meta name="twitter:image" content="https://pedrolourenco.pt/assets/projects/portfolio-mockup.jpg">
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Portfólio Pessoal — Estudo de Caso",
+    "description": "Estudo de caso do portfólio pessoal de Pedro Lourenço: arquitetura, design system, código Vanilla e deploy contínuo.",
+    "image": "https://pedrolourenco.pt/assets/projects/portfolio-mockup.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Pedro Lourenço",
+      "url": "https://pedrolourenco.pt/"
+    },
+    "datePublished": "2026-09-01",
+    "mainEntityOfPage": "https://pedrolourenco.pt/personalportfolio.html"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Saltar para o conteúdo</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Subtle Background Matrix Canvas -->
+  <canvas id="bg-matrix" class="bg-matrix" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="header">
+    <div class="nav-wrap container">
+      <a href="index.html#hero" class="logo">Pedro<span class="logo-dot">.</span>Lourenço</a>
+      <nav class="nav" id="primary-nav" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="index.html#about" data-i18n="nav_about">Sobre</a></li>
+          <li><a href="index.html#skills" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="index.html#certificados" data-i18n="nav_certificates">Certificados</a></li>
+          <li><a href="index.html#projects" data-i18n="nav_projects">Projetos</a></li>
+          <li><a href="index.html#contact" data-i18n="nav_contact">Contactos</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Mudar idioma" data-i18n-attr="aria-label:aria_toggle_lang">
+          <span class="lang-option" data-lang="pt">
+            <img src="https://flagcdn.com/w20/pt.png" srcset="https://flagcdn.com/w40/pt.png 2x" width="16" height="11" alt="PT">
+            <span class="lang-text">PT</span>
+          </span>
+          <span class="lang-sep">/</span>
+          <span class="lang-option" data-lang="en">
+            <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" width="16" height="11" alt="EN">
+            <span class="lang-text">EN</span>
+          </span>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav" data-i18n-attr="aria-label:aria_menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Case Study Hero -->
+    <section class="case-hero" id="project-hero">
+      <div class="container">
+        <a href="index.html#projects" class="btn btn-ghost btn-sm case-back">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span data-i18n="back_to_projects">Voltar aos projetos</span>
+        </a>
+
+        <div class="case-hero-grid">
+          <div class="case-hero-text">
+            <p class="mono-tag">$ cat portfolio.md</p>
+            <h1 class="case-title" data-i18n="cs_title">Um portfólio feito à mão, do primeiro pixel ao deploy</h1>
+            <p class="case-lead" data-i18n="cs_lead">O site que estás a ver é o meu projeto mais pessoal: HTML, CSS e JavaScript puro, sem frameworks nem templates. Queria que carregasse depressa, se lesse bem em qualquer ecrã e mostrasse como penso e construo.</p>
+            <div class="case-actions">
+              <a href="https://pedrolourenco.pt" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="cs_btn_live">Ver website</span>
+                <i class="fa-solid fa-arrow-up-right-from-square btn-icon" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/pedrolourencoo/pedrolourenco.pt" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github btn-icon-left" aria-hidden="true"></i>
+                <span data-i18n="cs_btn_code">Código no GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="browser reveal reveal-scale">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="browser-dots"><span></span><span></span><span></span></span>
+              <span class="browser-url">pedrolourenco.pt</span>
+            </div>
+            <div class="media-frame ratio-16-10" data-placeholder="assets/projects/portfolio-mockup.jpg">
+              <img src="assets/projects/portfolio-mockup.jpg" alt="Captura de ecrã da página inicial do portfólio" data-i18n-attr="alt:cs_browser_alt" decoding="async" fetchpriority="high">
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Metadata -->
+        <dl class="case-meta reveal">
+          <div class="meta-item">
+            <dt data-i18n="meta_role">Papel</dt>
+            <dd class="chip-list">
+              <span class="chip">Frontend Developer</span>
+              <span class="chip">UX/UI Designer</span>
+            </dd>
+          </div>
+          <div class="meta-item">
+            <dt>Stack</dt>
+            <dd class="chip-list">
+              <span class="chip"><i class="devicon-html5-plain" aria-hidden="true"></i>HTML5</span>
+              <span class="chip"><i class="devicon-css3-plain" aria-hidden="true"></i>CSS3</span>
+              <span class="chip"><i class="devicon-javascript-plain" aria-hidden="true"></i>JavaScript</span>
+            </dd>
+          </div>
+          <div class="meta-item">
+            <dt data-i18n="meta_year">Ano</dt>
+            <dd class="meta-value">2026</dd>
+          </div>
+          <div class="meta-item">
+            <dt data-i18n="meta_deploy">Alojamento</dt>
+            <dd class="meta-value">Vercel + Cloudflare</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="case-section" id="overview">
+      <div class="container case-block">
+        <div class="case-head reveal">
+          <p class="mono-tag">$ cat overview.txt</p>
+          <h2 class="case-h2" data-i18n="cs_overview_title">Visão geral</h2>
+        </div>
+        <div class="case-body">
+          <p class="case-text reveal" data-i18n="cs_overview_text">Precisava de uma presença online à altura do meu perfil técnico: rápida, segura e fácil de manter. Em vez de partir de um template, desenhei o sistema visual, escrevi todo o código e configurei a infraestrutura de ponta a ponta. O resultado é um site leve, bilingue e sem dependências pesadas, que posso evoluir a qualquer momento.</p>
+
+          <div class="highlights">
+            <div class="highlight reveal">
+              <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+              <div>
+                <h3 data-i18n="cs_hl1_title">Leve e rápido</h3>
+                <p data-i18n="cs_hl1_desc">Sem frameworks: HTML, CSS e JavaScript puro mantêm o peso da página no mínimo.</p>
+              </div>
+            </div>
+            <div class="highlight reveal" data-delay="1">
+              <i class="fa-solid fa-language" aria-hidden="true"></i>
+              <div>
+                <h3 data-i18n="cs_hl2_title">Bilingue de raiz</h3>
+                <p data-i18n="cs_hl2_desc">Interface PT/EN com deteção do idioma do browser e preferência guardada entre visitas.</p>
+              </div>
+            </div>
+            <div class="highlight reveal">
+              <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+              <div>
+                <h3 data-i18n="cs_hl3_title">Acessível</h3>
+                <p data-i18n="cs_hl3_desc">Navegação por teclado, foco visível, bom contraste e respeito por quem reduz o movimento no sistema.</p>
+              </div>
+            </div>
+            <div class="highlight reveal" data-delay="1">
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              <div>
+                <h3 data-i18n="cs_hl4_title">Detalhes com propósito</h3>
+                <p data-i18n="cs_hl4_desc">Cursor personalizado, contadores tipo odómetro e animações ao scroll que guiam o olhar sem distrair.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evolution (v1 vs v2) -->
+    <section class="case-section section-alt" id="evolution">
+      <div class="container case-block">
+        <div class="case-head reveal">
+          <p class="mono-tag">$ diff v1 v2</p>
+          <h2 class="case-h2" data-i18n="cs_evo_title">A evolução</h2>
+        </div>
+        <div class="case-body">
+          <p class="case-text reveal" data-i18n="cs_evo_text">A primeira versão do portfólio era rudimentar e servia apenas para marcar presença online. Nesta segunda versão reconstruí tudo do zero: um sistema de design coerente, código organizado por responsabilidades e uma interface mais madura. Arrasta o seletor para ver a diferença.</p>
+
+          <div class="compare reveal reveal-scale" id="compare">
+            <div class="compare-layer media-frame" data-placeholder="assets/projects/portfolio-v1.png">
+              <img src="assets/projects/portfolio-v1.png" alt="Versão 1.0 do portfólio — início da jornada" data-i18n-attr="alt:cs_v1" loading="lazy" decoding="async">
+            </div>
+            <div class="compare-layer compare-after media-frame" data-placeholder="assets/projects/portfolio-v2.png">
+              <img src="assets/projects/portfolio-v2.png" alt="Versão 2.0 do portfólio — foco em performance e UI/UX" data-i18n-attr="alt:cs_v2" loading="lazy" decoding="async">
+            </div>
+            <span class="compare-tag compare-tag-start" aria-hidden="true">v1.0</span>
+            <span class="compare-tag compare-tag-end" aria-hidden="true">v2.0</span>
+            <span class="compare-handle" aria-hidden="true"></span>
+            <input class="compare-range" type="range" min="0" max="100" value="100" aria-label="Comparar a versão 1 com a versão 2" data-i18n-attr="aria-label:cs_compare_aria">
+          </div>
+          <p class="media-caption" data-i18n="cs_compare_hint">Arrasta para comparar as duas versões</p>
+
+          <div class="highlights highlights-3">
+            <div class="highlight reveal">
+              <div>
+                <h3 data-i18n="cs_ch1_title">Design</h3>
+                <p data-i18n="cs_ch1_desc">De um layout improvisado para um sistema visual consistente, com tokens de cor, tipografia Manrope e componentes reutilizáveis.</p>
+              </div>
+            </div>
+            <div class="highlight reveal" data-delay="1">
+              <div>
+                <h3 data-i18n="cs_ch2_title">Código</h3>
+                <p data-i18n="cs_ch2_desc">De ficheiros soltos para uma base separada em HTML, CSS e JavaScript, com dicionário de traduções e funções independentes.</p>
+              </div>
+            </div>
+            <div class="highlight reveal" data-delay="2">
+              <div>
+                <h3 data-i18n="cs_ch3_title">Experiência</h3>
+                <p data-i18n="cs_ch3_desc">De uma página estática para uma interface viva, com filtros de projetos, animações ao scroll, mapa interativo e formulário funcional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Screens -->
+    <section class="case-section" id="screens">
+      <div class="container case-block">
+        <div class="case-head reveal">
+          <p class="mono-tag">$ ls views/</p>
+          <h2 class="case-h2" data-i18n="cs_screens_title">Ecrãs principais</h2>
+        </div>
+        <div class="case-body">
+          <p class="case-text reveal" data-i18n="cs_screens_text">Alguns dos ecrãs que definem a experiência, do desktop ao telemóvel.</p>
+
+          <div class="gallery">
+            <figure class="shot shot-wide reveal reveal-scale">
+              <div class="media-frame ratio-16-10" data-placeholder="assets/projects/portfolio-home.jpg">
+                <img src="assets/projects/portfolio-home.jpg" alt="Página inicial com foto, anéis orbitais e chamada à ação" data-i18n-attr="alt:cs_shot_home" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="media-caption" data-i18n="cs_shot_home">Página inicial com foto, anéis orbitais e chamada à ação</figcaption>
+            </figure>
+
+            <figure class="shot shot-tall reveal reveal-scale" data-delay="1">
+              <div class="media-frame ratio-9-16" data-placeholder="assets/projects/portfolio-mobile.jpg">
+                <img src="assets/projects/portfolio-mobile.jpg" alt="Versão mobile com menu recolhível" data-i18n-attr="alt:cs_shot_mobile" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="media-caption" data-i18n="cs_shot_mobile">Versão mobile com menu recolhível</figcaption>
+            </figure>
+
+            <figure class="shot shot-half reveal reveal-scale">
+              <div class="media-frame ratio-4-3" data-placeholder="assets/projects/portfolio-about.jpg">
+                <img src="assets/projects/portfolio-about.jpg" alt="Sobre mim, com contadores tipo odómetro e linha do tempo" data-i18n-attr="alt:cs_shot_about" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="media-caption" data-i18n="cs_shot_about">Sobre mim, com contadores tipo odómetro e linha do tempo</figcaption>
+            </figure>
+
+            <figure class="shot shot-half reveal reveal-scale" data-delay="1">
+              <div class="media-frame ratio-4-3" data-placeholder="assets/projects/portfolio-projects.jpg">
+                <img src="assets/projects/portfolio-projects.jpg" alt="Projetos com filtros por categoria e cartões horizontais" data-i18n-attr="alt:cs_shot_projects" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="media-caption" data-i18n="cs_shot_projects">Projetos com filtros por categoria e cartões horizontais</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infrastructure & Deployment -->
+    <section class="case-section section-alt" id="infrastructure">
+      <div class="container case-block">
+        <div class="case-head reveal">
+          <p class="mono-tag">$ ./deploy.sh</p>
+          <h2 class="case-h2" data-i18n="cs_infra_title">Infraestrutura &amp; Deploy</h2>
+        </div>
+        <div class="case-body">
+          <p class="case-text reveal" data-i18n="cs_infra_text">Um site rápido também depende de onde e como é servido. Combinei três peças para que cada push para o GitHub chegue ao visitante de forma automática, segura e com cache global.</p>
+
+          <ol class="pipeline reveal" aria-label="Deploy pipeline">
+            <li>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <strong>Git push</strong>
+              <span data-i18n="cs_pipe_git">Código versionado no GitHub</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-server" aria-hidden="true"></i>
+              <strong>Vercel</strong>
+              <span data-i18n="cs_pipe_vercel">Build e deploy automáticos</span>
+            </li>
+            <li>
+              <i class="fa-brands fa-cloudflare" aria-hidden="true"></i>
+              <strong>Cloudflare</strong>
+              <span data-i18n="cs_pipe_cf">DNS, CDN e proteção</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-globe" aria-hidden="true"></i>
+              <strong>pedrolourenco.pt</strong>
+              <span data-i18n="cs_pipe_site">Site online, servido em HTTPS</span>
+            </li>
+          </ol>
+
+          <div class="infra-grid">
+            <article class="infra-card reveal">
+              <div class="infra-icon"><i class="fa-solid fa-server" aria-hidden="true"></i></div>
+              <h3 class="infra-title">Vercel</h3>
+              <p class="infra-desc" data-i18n="proj_infra_vercel">Alojamento pensado para frontend, ligado ao GitHub. Cada push gera um novo deploy automático e uma pré-visualização, sem passos manuais.</p>
+            </article>
+            <article class="infra-card reveal" data-delay="1">
+              <div class="infra-icon"><i class="fa-brands fa-cloudflare" aria-hidden="true"></i></div>
+              <h3 class="infra-title">Cloudflare</h3>
+              <p class="infra-desc" data-i18n="proj_infra_cloudflare">Gere o DNS e distribui o conteúdo por uma CDN global. Ajuda a proteger o site de tráfego malicioso e coloca imagens e estilos em cache perto de quem visita.</p>
+            </article>
+            <article class="infra-card reveal" data-delay="2">
+              <div class="infra-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+              <h3 class="infra-title" data-i18n="cs_domain_title">Domínio personalizado</h3>
+              <p class="infra-desc" data-i18n="proj_infra_domain">Domínio próprio para a minha marca pessoal, com registos A e CNAME a apontar para a Vercel e HTTPS ativo.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serverless Dynamic Form -->
+    <section class="case-section" id="dynamic-form">
+      <div class="container case-block">
+        <div class="case-head reveal">
+          <p class="mono-tag">$ fetch --post api</p>
+          <h2 class="case-h2" data-i18n="cs_form_title">Formulário dinâmico &amp; serverless</h2>
+        </div>
+        <div class="case-body">
+          <p class="case-text reveal" data-i18n="cs_form_text">A secção de contactos envia mensagens sem servidor próprio. O formulário usa a API do <strong>Web3Forms</strong> através da Fetch API: os dados seguem de forma assíncrona e o email chega-me diretamente, enquanto o visitante recebe confirmação de sucesso ou erro na própria página.</p>
+
+          <div class="form-flow">
+            <ul class="check-list reveal">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span data-i18n="cs_form_l1">Envio assíncrono com Fetch API, sem recarregar a página.</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span data-i18n="cs_form_l2">Sem backend para manter: o Web3Forms recebe os dados e entrega o email.</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span data-i18n="cs_form_l3">Feedback imediato de sucesso ou erro, com campo anti-spam (honeypot) escondido.</span></li>
+            </ul>
+
+            <div class="code-card reveal reveal-scale" data-delay="1">
+              <div class="code-card-head" aria-hidden="true">
+                <span class="browser-dots"><span></span><span></span><span></span></span>
+                <span>script.js</span>
+              </div>
+<pre><code><span class="tok-k">const</span> res = <span class="tok-k">await</span> <span class="tok-f">fetch</span>(<span class="tok-s">'https://api.web3forms.com/submit'</span>, {
+  method: <span class="tok-s">'POST'</span>,
+  headers: { Accept: <span class="tok-s">'application/json'</span> },
+  body: <span class="tok-k">new</span> <span class="tok-f">FormData</span>(form)
+});
+<span class="tok-k">const</span> { success } = <span class="tok-k">await</span> res.<span class="tok-f">json</span>();</code></pre>
+            </div>
+          </div>
+
+          <figure class="shot reveal reveal-scale">
+            <div class="media-frame ratio-form" data-placeholder="assets/projects/portfolio-contact.png">
+              <img src="assets/projects/portfolio-contact.png" alt="Formulário de contacto com mensagem de estado" data-i18n-attr="alt:cs_form_shot" loading="lazy" decoding="async">
+            </div>
+            <figcaption class="media-caption" data-i18n="cs_form_shot">Formulário de contacto com mensagem de estado</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Takeaways & CTA -->
+    <section class="case-section section-alt" id="takeaways">
+      <div class="container case-block">
+        <div class="case-head reveal">
+          <p class="mono-tag">$ exit 0</p>
+          <h2 class="case-h2" data-i18n="cs_learn_title">O que levo deste projeto</h2>
+        </div>
+        <div class="case-body">
+          <p class="case-text reveal" data-i18n="cs_learn_text">Construir sem frameworks obrigou-me a perceber o que cada linha faz: gestão de estado no DOM, acessibilidade, performance e deploy contínuo. É a base sobre a qual continuo a evoluir.</p>
+
+          <div class="case-cta reveal">
+            <h3 data-i18n="cs_next_title">Queres ver o resultado ou falar comigo?</h3>
+            <p data-i18n="cs_next_text">Explora os outros projetos ou diz-me em que posso ajudar.</p>
+            <div class="case-actions">
+              <a href="index.html#projects" class="btn btn-primary" data-i18n="cs_btn_other">Ver outros projetos</a>
+              <a href="index.html#contact" class="btn btn-ghost" data-i18n="hero_cta_contact">Contactar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html#hero" class="logo">Pedro<span class="logo-dot">.</span>Lourenço</a>
+          <p class="footer-tagline" data-i18n="footer_tagline">Desenvolvedor focado em automação, segurança e eficiência.</p>
+          <div class="footer-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="hero_status">Disponível para novos projetos</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4 data-i18n="footer_links_title">Navegação</h4>
+          <ul>
+            <li><a href="index.html#about" data-i18n="nav_about">Sobre</a></li>
+            <li><a href="index.html#skills" data-i18n="nav_skills">Skills</a></li>
+            <li><a href="index.html#projects" data-i18n="nav_projects">Projetos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-socials">
+          <h4 data-i18n="nav_contact">Contactos</h4>
+          <a href="mailto:contact@pedrolourenco.pt" class="footer-email">contact@pedrolourenco.pt</a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/pedrolourenco5/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8.5h4.6V23H.2V8.5zM8.4 8.5h4.4v1.98h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.9h-4.6v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16v8.04H8.4V8.5z"/></svg>
+            </a>
+            <a href="https://github.com/pedrolourencoo" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A10.52 10.52 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2026 Pedro Lourenço. Todos os direitos reservados.</p>
+        <p class="footer-made" data-i18n="footer_made">Desenvolvido com código em Évora, Portugal.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo" data-i18n-attr="aria-label:aria_back_top,title:aria_back_top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Lightbox Modal da Galeria -->
+  <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Visualizador de imagens">
+    <div class="gl-backdrop"></div>
+    <div class="gl-container">
+      <button type="button" class="gl-btn gl-close" id="gl-close" aria-label="Fechar visualizador">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <button type="button" class="gl-btn gl-nav gl-prev" id="gl-prev" aria-label="Imagem anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="gl-slider-window">
+        <div class="gl-track" id="gl-track">
+          <!-- A imagem ativa é injetada dinamicamente via JS com transição -->
+          <img src="" alt="" id="gl-active-img" class="gl-active-img">
+        </div>
+      </div>
+
+      <button type="button" class="gl-btn gl-nav gl-next" id="gl-next" aria-label="Imagem seguinte">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <p class="gl-caption" id="gl-caption"></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
