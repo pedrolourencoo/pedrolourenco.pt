@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta_title_home">Pedro Lourenço — Software Developer & Cybersecurity</title>
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portfólio de Pedro Lourenço — Software Developer em Évora especializado em Python, automação de processos, IoT e cibersegurança." data-i18n-attr="content:meta_desc_home">
+  <meta name="keywords" content="Pedro Lourenço, Software Developer, Python Developer, Cibersegurança, Automação, Évora, Portugal, Web Developer, IoT, Computer Vision, Técnico de Cibersegurança">
+  <meta name="author" content="Pedro Lourenço">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#060b1f">
+
+  <link rel="canonical" href="https://www.pedrolourenco.pt/">
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pedrolourenco.pt/">
+  <meta property="og:site_name" content="Pedro Lourenço — Portfolio">
+  <meta property="og:title" content="Pedro Lourenço — Software Developer & Cybersecurity" data-i18n-attr="content:meta_title_home">
+  <meta property="og:description" content="Portfólio de Pedro Lourenço — Software Developer em Évora especializado em Python, automação de processos, IoT e cibersegurança." data-i18n-attr="content:meta_desc_home">
+  <meta property="og:image" content="https://www.pedrolourenco.pt/assets/projects/portfolio-mockup.jpg">
+  <meta property="og:image:alt" content="Portfólio de Pedro Lourenço">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:locale:alternate" content="en_GB">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.pedrolourenco.pt/">
+  <meta name="twitter:title" content="Pedro Lourenço — Software Developer & Cybersecurity" data-i18n-attr="content:meta_title_home">
+  <meta name="twitter:description" content="Portfólio de Pedro Lourenço — Software Developer em Évora especializado em Python, automação de processos, IoT e cibersegurança." data-i18n-attr="content:meta_desc_home">
+  <meta name="twitter:image" content="https://www.pedrolourenco.pt/assets/projects/portfolio-mockup.jpg">
+
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+
+  <!-- Ícones (Font Awesome) -->
+  <script defer src="https://kit.fontawesome.com/044ad9e5d8.js" crossorigin="anonymous"></script>
+
+  <!-- Dados estruturados (Schema.org) para o Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.pedrolourenco.pt/#person",
+        "name": "Pedro Lourenço",
+        "givenName": "Pedro",
+        "familyName": "Lourenço",
+        "jobTitle": "Software Developer & Cybersecurity Technician",
+        "description": "Software Developer de Évora focado em Python, automação, IoT e cibersegurança.",
+        "url": "https://www.pedrolourenco.pt/",
+        "image": "https://www.pedrolourenco.pt/assets/profile.jpg",
+        "email": "mailto:contact@pedrolourenco.pt",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Évora",
+          "addressCountry": "PT"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/pedrolourenco5/",
+          "https://github.com/pedrolourencoo"
+        ],
+        "knowsAbout": [
+          "Python",
+          "Cybersecurity",
+          "Software Development",
+          "Process Automation",
+          "IoT",
+          "Computer Vision",
+          "Web Development",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "C++",
+          "SQL"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.pedrolourenco.pt/#website",
+        "url": "https://www.pedrolourenco.pt/",
+        "name": "Pedro Lourenço — Software Developer",
+        "publisher": {
+          "@id": "https://www.pedrolourenco.pt/#person"
+        },
+        "inLanguage": ["pt-PT", "en-GB"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip_link">Saltar para o conteúdo</a>
+
+  <!-- Canvas do fundo (chuva binária) -->
+  <canvas id="bg-matrix" class="bg-matrix" aria-hidden="true"></canvas>
+
+  <!-- Cursor personalizado -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===== Cabeçalho ===== -->
+  <header class="site-header" id="header">
+    <div class="nav-wrap container">
+      <a href="#hero" class="logo" aria-label="Pedro Lourenço — Início">Pedro<span class="logo-dot">.</span>Lourenço</a>
+
+      <nav class="nav" id="primary-nav" aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
+          <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#certificados" data-i18n="nav_certificates">Certificados</a></li>
+          <li><a href="#projects" data-i18n="nav_projects">Projetos</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contactos</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Mudar idioma" data-i18n-attr="aria-label:aria_toggle_lang">
+          <span class="lang-option" data-lang="pt">
+            <img src="https://flagcdn.com/w20/pt.png" srcset="https://flagcdn.com/w40/pt.png 2x" width="16" height="11" alt="PT">
+            <span class="lang-text">PT</span>
+          </span>
+          <span class="lang-sep">/</span>
+          <span class="lang-option" data-lang="en">
+            <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" width="16" height="11" alt="EN">
+            <span class="lang-text">EN</span>
+          </span>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav" data-i18n-attr="aria-label:aria_menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="mono-tag">$ whoami_</p>
+          <h1 class="hero-title" id="hero-heading" data-i18n="hero_title">
+            Desenvolvo software com <span class="text-accent">propósito.</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Sou o Pedro, developer de Évora focado em Python, automação e cibersegurança. Transformo problemas complexos em soluções eficientes.
+          </p>
+          <div class="hero-actions">
+            <div class="cv-dropdown-wrap">
+              <button class="btn btn-primary" id="cv-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="cv-dropdown">
+                <span data-i18n="hero_cta_cv">Download CV</span>
+                <i class="fa-solid fa-chevron-down btn-icon" aria-hidden="true"></i>
+              </button>
+              <div class="cv-dropdown" id="cv-dropdown" role="menu">
+                <a href="assets/pedro-lourenco-cv-pt.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">
+                  <img src="https://flagcdn.com/w20/pt.png" srcset="https://flagcdn.com/w40/pt.png 2x" width="20" height="14" alt="PT"> Português
+                </a>
+                <a href="assets/pedro-lourenco-cv-en.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">
+                  <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" width="20" height="14" alt="EN"> English
+                </a>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_contact">Contactar</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-ring hero-ring-1" aria-hidden="true"></div>
+          <div class="hero-ring hero-ring-2" aria-hidden="true"></div>
+          <div class="hero-ring hero-ring-3" aria-hidden="true"></div>
+
+          <div class="hero-photo" data-placeholder="PL">
+            <img 
+              src="assets/profile.webp" srcset="assets/profile-560.webp 560w, assets/profile.webp 1000w" sizes="(max-width: 767px) 310px, 400px" alt="Pedro Lourenço — Software Developer" decoding="async" fetchpriority="high">
+          </div>
+
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="hero_status">Disponível para novos projetos</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Sobre mim ===== -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <p class="mono-tag reveal">$ whoami --verbose</p>
+        <h2 class="section-title reveal" id="about-heading" data-i18n="about_title">Sobre Mim</h2>
+
+        <div class="about-grid">
+          <!-- Coluna da esquerda: foto e estatísticas -->
+          <div class="about-left reveal">
+            <div class="about-photo-container" tabindex="0" data-placeholder="PL">
+              <img 
+                src="assets/profile-photo.webp" srcset="assets/profile-photo-400.webp 400w, assets/profile-photo.webp 800w"sizes="(max-width: 767px) 220px, (max-width: 1023px) 260px, 420px"alt="Pedro Lourenço" class="foto-frente" loading="lazy" decoding="async">
+              <img src="assets/profile-photo-hover.webp" srcset="assets/profile-photo-hover-400.webp 400w, assets/profile-photo-hover.webp 800w" sizes="(max-width: 767px) 220px, (max-width: 1023px) 260px, 420px" alt="Pedro Lourenço — Em ação" class="foto-verso" loading="lazy" decoding="async">
+              <div class="foto-overlay">
+                <span class="foto-word" data-i18n="foto_word_1">Criar.</span>
+                <span class="foto-word highlight" data-i18n="foto_word_2">Automatizar.</span>
+                <span class="foto-word" data-i18n="foto_word_3">Proteger.</span>
+              </div>
+
+              <span class="ai-badge-overlay" data-i18n="ai_generated_notice">
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                Imagens por IA
+              </span>
+            </div>
+
+            <div class="about-stats">
+              <div class="stat-card">
+                <span class="stat-num" id="stat-years">3</span>
+                <span class="stat-label" data-i18n="stat_years">Anos de experiência</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-num" id="stat-availability">100%</span>
+                <span class="stat-label" data-i18n="stat_availability">Disponibilidade</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-num" id="stat-projects">0</span>
+                <span class="stat-label" data-i18n="stat_projects">Projetos práticos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna da direita: bio, badges e timeline -->
+          <div class="about-content">
+            <div class="about-header reveal">
+              <h3 class="about-name">Pedro Lourenço</h3>
+              <p class="about-role" data-i18n="about_role">Técnico de Cibersegurança | TI &amp; Segurança de Redes</p>
+
+              <div class="availability-badges">
+                <span class="badge-chip">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  <span data-i18n="badge_available">Disponibilidade imediata</span>
+                </span>
+                <span class="badge-chip">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  <span data-i18n="badge_iefp">Elegível para Estágio IEFP</span>
+                </span>
+              </div>
+            </div>
+
+            <p class="about-text reveal" data-i18n="about_text">
+              Começo sempre pela mesma pergunta: <strong>como posso tornar este sistema mais eficiente e seguro?</strong><br><br>
+              Sou um jovem profissional natural de Évora, focado em desenvolvimento de software, automação e cibersegurança. Tenho combinado formação técnica com experiência prática em projetos reais, desde sistemas de visão computacional até automação financeira.
+            </p>
+
+            <div class="percurso-section reveal">
+              <p class="mono-tag percurso-tag">$ cat percurso.log</p>
+
+              <ol class="timeline" aria-label="Linha do tempo académica e profissional" data-i18n-attr="aria-label:timeline_aria">
+                <li class="timeline-item">
+                  <div class="timeline-dot" aria-hidden="true"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-year" data-i18n="tl1_date">Maio 2025 — Ago 2025</div>
+                    <h3 class="timeline-title" data-i18n="tl1_title">Python Developer — IoT &amp; Visão Computacional</h3>
+                    <p class="timeline-place">Arrow4D</p>
+                  </div>
+                </li>
+
+                <li class="timeline-item">
+                  <div class="timeline-dot" aria-hidden="true"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-top">
+                      <div class="timeline-year">2023 — 2024</div>
+                      <span class="timeline-level" data-i18n="level_5">Nível 5</span>
+                    </div>
+                    <h3 class="timeline-title" data-i18n="tl2_title">Técnico Especialista de Cibersegurança</h3>
+                    <p class="timeline-place" data-i18n="tl2_place">Centro de Formação Profissional de Évora</p>
+                    <div class="timeline-meta-row">
+                      <div class="timeline-grade"><span class="timeline-grade-num">15</span> <span data-i18n="grade_unit">valores</span></div>
+                      <a class="timeline-cert-link" href="certificados/ciberseguranca.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver certificado — Técnico Especialista de Cibersegurança" data-i18n-attr="aria-label:cert_link_cyber">
+                        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+                        <span data-i18n="cert_link">Ver certificado</span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="timeline-item">
+                  <div class="timeline-dot" aria-hidden="true"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-top">
+                      <div class="timeline-year">2020 — 2023</div>
+                      <span class="timeline-level" data-i18n="level_4">Nível 4</span>
+                    </div>
+                    <h3 class="timeline-title" data-i18n="tl3_title">Técnico de Gestão e Programação (GPSI)</h3>
+                    <p class="timeline-place" data-i18n="tl3_place">Escola Secundária de Vendas Novas</p>
+                    <div class="timeline-meta-row">
+                      <div class="timeline-grade"><span class="timeline-grade-num">18</span> <span data-i18n="grade_unit">valores</span></div>
+                      <a class="timeline-cert-link" href="certificados/gestao-programacao.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver certificado — Técnico de Gestão e Programação (GPSI)" data-i18n-attr="aria-label:cert_link_gpsi">
+                        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+                        <span data-i18n="cert_link">Ver certificado</span>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="timeline-item">
+                  <div class="timeline-dot" aria-hidden="true"></div>
+                  <div class="timeline-content">
+                    <div class="timeline-year">2022 — 2023</div>
+                    <h3 class="timeline-title" data-i18n="tl4_title">Developer &amp; Suporte Técnico</h3>
+                    <p class="timeline-place">Casa do Povo de Vendas Novas</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <p class="mono-tag reveal">$ ls skills/</p>
+        <h2 class="section-title reveal" id="skills-heading" data-i18n="skills_title">O meu arsenal<br>tecnológico.</h2>
+        <p class="section-desc reveal" data-i18n="skills_desc">Linguagens e ferramentas com que construo, automatizo e protejo sistemas. Escolho cada uma pelo problema que resolve, não pela moda.</p>
+
+        <div class="skills-grid-new reveal">
+          <!-- Lógica e automação -->
+          <div class="skill-category" style="--hover-color: #8c9eff;">
+            <div class="skill-cat-icon purple" aria-hidden="true"><i class="fa-solid fa-terminal"></i></div>
+            <h3 class="skill-cat-title" data-i18n="skill_cat_software">Lógica &amp; Automação</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+              <span class="skill-tag"><i class="devicon-cplusplus-plain" aria-hidden="true"></i> C++</span>
+              <span class="skill-tag"><i class="devicon-c-plain" aria-hidden="true"></i> C</span>
+              <span class="skill-tag"><i class="devicon-visualstudio-plain" aria-hidden="true"></i> Visual Basic</span>
+              <span class="skill-tag"><i class="fa-solid fa-microchip" aria-hidden="true"></i> IoT (Jetson Nano)</span>
+            </div>
+          </div>
+
+          <!-- Web e UI/UX -->
+          <div class="skill-category" style="--hover-color: var(--accent-2);">
+            <div class="skill-cat-icon teal" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+            <h3 class="skill-cat-title" data-i18n="skill_cat_web">Web &amp; UI/UX</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML5</span>
+              <span class="skill-tag"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS3</span>
+              <span class="skill-tag"><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</span>
+              <span class="skill-tag"><i class="devicon-figma-plain" aria-hidden="true"></i> Figma</span>
+              <span class="skill-tag"><i class="devicon-canva-original" aria-hidden="true"></i> Canva</span>
+              <span class="skill-tag"><i class="devicon-photoshop-plain" aria-hidden="true"></i> Photoshop</span>
+            </div>
+          </div>
+
+          <!-- Dados e cibersegurança -->
+          <div class="skill-category" style="--hover-color: #fbbd2a;">
+            <div class="skill-cat-icon amber" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="skill-cat-title" data-i18n="skill_cat_db">Dados &amp; Cibersegurança</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-database" aria-hidden="true"></i> SQL</span>
+              <span class="skill-tag"><i class="devicon-mysql-plain" aria-hidden="true"></i> MySQL</span>
+              <span class="skill-tag">
+                <svg width="15" height="15" viewBox="0 0 300 300" fill="currentColor" aria-hidden="true" style="display:inline-block; vertical-align: -0.15em; margin-right: 0.25rem;">
+                  <path d="M26.7 1.5C16.1 4.4 6.1 13.7 2.1 24.5 0 30 0 31.1 0 149.4 0 263.2.1 269 1.9 274.3c3.6 11.2 12.3 19.8 23.8 23.6 6.2 2.1 7.3 2.1 123.5 2.1 124.8 0 121.9.1 131.4-4.8 6.6-3.4 14.5-12.7 17.2-20.2l2.2-6.5V150.3c0-116.7 0-118.3-2.1-124.5-3.9-12.1-13.4-21.2-25-24.3-7.6-2.1-238.8-2-246.2 0m245.5 13.7c4.5 2 8.9 6.2 11.4 10.8 1.8 3.4 1.9 7.2 1.9 94.5v91l-32.1.3c-25.7.2-32.4 0-33.2-1.1-1.9-2.2-7.9-21.6-10.1-32.4-3.2-15.5-4.4-29.5-3.8-43.3.9-19.8 4.5-33.9 13.3-51.6 4.6-9.3 5.3-11.5 4.5-13.6-1.2-3.2-2.8-3.8-10.3-3.8-23 0-52.9 10-73.8 24.8-9.3 6.5-24.5 22.3-31.6 32.7-9.9 14.5-20.9 38-26.3 56.2-2.7 9.1-6.1 24.8-6.1 28.3 0 4.9-.4 5-31.7 5-27.9 0-29.3-.1-30.3-1.9-1.4-2.7-1.4-169.7 0-177.2 1.1-5.8 4.8-12 9.1-15.2 1.5-1 5.5-2.7 9-3.7 6-1.7 13.7-1.8 121.4-1.7 105 .2 115.3.3 118.7 1.9M205 81.3c0 .7-1.3 4.7-3 9-12.6 32.7-11.8 75.6 2.2 117.2 4 12 6.5 16.2 10.1 17.5 1.9.6 16.1 1 37.3 1H286v20.7c-.1 14.3-.5 21.9-1.4 24.4-2.1 5.9-6.3 10.5-11.9 13l-5.2 2.4H150c-111.1 0-117.8-.1-122.2-1.8-2.6-1-6.1-3.5-7.9-5.4-5.9-6.8-6.3-8.7-6.3-31.8l-.1-21 35.1-.5c38-.5 38.4-.6 38.4-6 0-1.5.9-7.4 2.1-13.1 7.3-36.8 19-63.8 36.6-84.6 3.2-3.7 6.4-7.6 7.3-8.6 2.4-3 17-14.1 24-18.4 10.5-6.3 20.8-10.2 35.8-13.3 10.6-2.3 12.2-2.4 12.2-.7"/>
+                </svg>
+                Wireshark
+              </span>
+              <span class="skill-tag"><i class="devicon-linux-plain" aria-hidden="true"></i> Linux</span>
+            </div>
+          </div>
+
+          <!-- Workflow e deploy -->
+          <div class="skill-category" style="--hover-color: var(--danger);">
+            <div class="skill-cat-icon rose" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3 class="skill-cat-title" data-i18n="skill_cat_tools">Workflow &amp; Deploy</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git</span>
+              <span class="skill-tag"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</span>
+              <span class="skill-tag"><i class="devicon-vscode-plain" aria-hidden="true"></i> VS Code</span>
+              <span class="skill-tag"><i class="fa-brands fa-cloudflare" aria-hidden="true"></i> Cloudflare</span>
+              <span class="skill-tag"><i class="devicon-vercel-original" aria-hidden="true"></i> Vercel</span>
+            </div>
+          </div>
+
+          <!-- IA e produtividade -->
+          <div class="skill-category full-width" style="--hover-color: var(--accent);">
+            <div class="skill-cat-icon ai" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="skill-cat-title" data-i18n="skill_cat_ai">IA &amp; Produtividade</h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-microsoft" aria-hidden="true"></i> Office 365</span>
+              <span class="skill-tag">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline-block; vertical-align: -0.15em;">
+                  <path d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.373 12 12 0-6.627 5.373-12 12-12-6.627 0-12-5.373-12-12z"/>
+                </svg>
+                Google Gemini
+              </span>
+              <span class="skill-tag"><i class="fa-brands fa-openai" aria-hidden="true"></i> ChatGPT</span>
+              <span class="skill-tag"><i class="fa-brands fa-claude" aria-hidden="true"></i> Claude</span>
+              <span class="skill-tag">
+                <svg width="15" height="15" viewBox="0 0 512 416" fill="currentColor" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" aria-hidden="true" style="display:inline-block; vertical-align: -0.15em;">
+                  <path d="M181.33 266.143c0-11.497 9.32-20.818 20.818-20.818 11.498 0 20.819 9.321 20.819 20.818v38.373c0 11.497-9.321 20.818-20.819 20.818-11.497 0-20.818-9.32-20.818-20.818v-38.373zM308.807 245.325c-11.477 0-20.798 9.321-20.798 20.818v38.373c0 11.497 9.32 20.818 20.798 20.818 11.497 0 20.818-9.32 20.818-20.818v-38.373c0-11.497-9.32-20.818-20.818-20.818z" fill-rule="nonzero"/>
+                  <path d="M512.002 246.393v57.384c-.02 7.411-3.696 14.638-9.67 19.011C431.767 374.444 344.695 416 256 416c-98.138 0-196.379-56.542-246.33-93.21-5.975-4.374-9.65-11.6-9.671-19.012v-57.384a35.347 35.347 0 016.857-20.922l15.583-21.085c8.336-11.312 20.757-14.31 33.98-14.31 4.988-56.953 16.794-97.604 45.024-127.354C155.194 5.77 226.56 0 256 0c29.441 0 100.807 5.77 154.557 62.722 28.19 29.75 40.036 70.401 45.025 127.354 13.263 0 25.602 2.936 33.958 14.31l15.583 21.127c4.476 6.077 6.878 13.345 6.878 20.88zm-97.666-26.075c-.677-13.058-11.292-18.19-22.338-21.824-11.64 7.309-25.848 10.183-39.46 10.183-14.454 0-41.432-3.47-63.872-25.869-5.667-5.625-9.527-14.454-12.155-24.247a212.902 212.902 0 00-20.469-1.088c-6.098 0-13.099.349-20.551 1.088-2.628 9.793-6.509 18.622-12.155 24.247-22.4 22.4-49.418 25.87-63.872 25.87-13.612 0-27.86-2.855-39.501-10.184-11.005 3.613-21.558 8.828-22.277 21.824-1.17 24.555-1.272 49.11-1.375 73.645-.041 12.318-.082 24.658-.288 36.976.062 7.166 4.374 13.818 10.882 16.774 52.97 24.124 103.045 36.278 149.137 36.278 46.01 0 96.085-12.154 149.014-36.278 6.508-2.956 10.84-9.608 10.881-16.774.637-36.832.124-73.809-1.642-110.62h.041zM107.521 168.97c8.643 8.623 24.966 14.392 42.56 14.392 13.448 0 39.03-2.874 60.156-24.329 9.28-8.951 15.05-31.35 14.413-54.079-.657-18.231-5.769-33.28-13.448-39.665-8.315-7.371-27.203-10.574-48.33-8.644-22.399 2.238-41.267 9.588-50.875 19.833-20.798 22.728-16.323 80.317-4.476 92.492zm130.556-56.008c.637 3.51.965 7.35 1.273 11.517 0 2.875 0 5.77-.308 8.952 6.406-.636 11.847-.636 16.959-.636s10.553 0 16.959.636c-.329-3.182-.329-6.077-.329-8.952.329-4.167.657-8.007 1.294-11.517-6.735-.637-12.812-.965-17.924-.965s-11.21.328-17.924.965zm49.275-8.008c-.637 22.728 5.133 45.128 14.413 54.08 21.105 21.454 46.708 24.328 60.155 24.328 17.596 0 33.918-5.769 42.561-14.392 11.847-12.175 16.322-69.764-4.476-92.492-9.608-10.245-28.476-17.595-50.875-19.833-21.127-1.93-40.015 1.273-48.33 8.644-7.679 6.385-12.791 21.434-13.448 39.665z"/>
+                </svg>
+                GitHub Copilot
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Certificados ===== -->
+    <section class="section" id="certificados" aria-labelledby="cert-heading">
+      <div class="container">
+        <p class="mono-tag reveal">$ ls certificados/</p>
+        <h2 class="section-title reveal" id="cert-heading" data-i18n="certificates_title">Certificados</h2>
+
+        <div class="recognition-grid reveal">
+          <a class="rec-card rec-card-link" href="https://www.credly.com/badges/ccd2f8a3-76d1-4a25-9ecf-57805c511437" target="_blank" rel="noopener noreferrer">
+            <div class="rec-icon" aria-hidden="true">◈</div>
+            <div class="rec-body">
+              <div class="rec-type" data-i18n="cert_type_cisco">Certificado Cisco</div>
+              <div class="rec-title">Introduction to Cybersecurity</div>
+              <div class="rec-sub">Credly <span class="rec-link-hint" aria-hidden="true">↗</span></div>
+            </div>
+          </a>
+
+          <a class="rec-card rec-card-link" href="https://www.credly.com/badges/9d293b74-2695-42ce-97d8-cd0b3bdbd681" target="_blank" rel="noopener noreferrer">
+            <div class="rec-icon" aria-hidden="true">◈</div>
+            <div class="rec-body">
+              <div class="rec-type" data-i18n="cert_type_cisco">Certificado Cisco</div>
+              <div class="rec-title">CyberOps Associate</div>
+              <div class="rec-sub">Credly <span class="rec-link-hint" aria-hidden="true">↗</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projetos ===== -->
+    <section class="section section-alt" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <p class="mono-tag reveal">$ ls projects/</p>
+        <h2 class="section-title reveal" id="projects-heading" data-i18n="projects_title">Trabalho que fala<br>por si próprio.</h2>
+
+        <div class="project-filters reveal" role="group" aria-label="Filtrar projetos" data-i18n-attr="aria-label:projects_filter_aria">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true" data-i18n="filter_all">Todos</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false" data-i18n="filter_web">Web Development</button>
+          <button class="filter-btn" type="button" data-filter="automation" aria-pressed="false" data-i18n="filter_automation">Automação</button>
+          <button class="filter-btn" type="button" data-filter="data" aria-pressed="false" data-i18n="filter_data">Dados &amp; IA</button>
+        </div>
+
+        <div class="projects-list reveal" id="projects-list">
+          <!-- Portfólio pessoal (o único com página própria) -->
+          <a href="/personalportfolio.html" class="proj-card" data-cat="web">
+            <div class="proj-card-img" data-placeholder="PL">
+              <img src="assets/projects/portfolio-mockup.webp" srcset="assets/projects/portfolio-mockup-640.webp 640w, assets/projects/portfolio-mockup.webp 1200w" sizes="(max-width: 767px) min(82vw, 360px), (max-width: 900px) 100vw, 320px"alt="Portfólio Pessoal" data-i18n-attr="alt:p1_title" loading="lazy" decoding="async">
+            </div>
+            <div class="proj-card-body">
+              <div class="proj-card-meta">
+                <span class="proj-badge web" data-i18n="filter_web">Web Development</span>
+                <span class="proj-card-num">01</span>
+              </div>
+              <h3 class="proj-title" data-i18n="p1_title">Portfólio Pessoal</h3>
+              <p class="proj-desc" data-i18n="p1_desc">O website que estás a ver neste momento — construído do zero com HTML, CSS e JavaScript puro (Vanilla).</p>
+              <div class="proj-tags">
+                <span class="proj-tag">HTML</span>
+                <span class="proj-tag">CSS</span>
+                <span class="proj-tag">JavaScript</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Automação de faturas (em breve) -->
+          <article class="proj-card proj-card-soon" data-cat="automation" tabindex="0">
+            <div class="proj-card-img">
+              <div class="img-placeholder" aria-hidden="true">AF</div>
+              <div class="proj-soon-overlay">
+                <span class="proj-soon-badge" data-i18n="proj_coming_soon">Em breve</span>
+              </div>
+            </div>
+            <div class="proj-card-body">
+              <div class="proj-card-meta">
+                <span class="proj-badge automation" data-i18n="filter_automation">Automação</span>
+                <span class="proj-card-num">02</span>
+              </div>
+              <h3 class="proj-title" data-i18n="p2_title">Automação de Faturas</h3>
+              <p class="proj-desc" data-i18n="p2_desc">Programa desenvolvido para a Futurévora capaz de processar faturas em formato PDF para otimização da gestão financeira.</p>
+              <div class="proj-tags">
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Automação</span>
+                <span class="proj-tag">PDF</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Geo Guard (em breve) -->
+          <article class="proj-card proj-card-soon" data-cat="data" tabindex="0">
+            <div class="proj-card-img">
+              <div class="img-placeholder" aria-hidden="true">GG</div>
+              <div class="proj-soon-overlay">
+                <span class="proj-soon-badge" data-i18n="proj_coming_soon">Em breve</span>
+              </div>
+            </div>
+            <div class="proj-card-body">
+              <div class="proj-card-meta">
+                <span class="proj-badge data" data-i18n="p3_badge">IoT &amp; Visão</span>
+                <span class="proj-card-num">03</span>
+              </div>
+              <h3 class="proj-title" data-i18n="p3_title">Geo Guard</h3>
+              <p class="proj-desc" data-i18n="p3_desc">Sistema integrado desenvolvido em Python focado na monitorização contínua e deteção inteligente em ambientes controlados.</p>
+              <div class="proj-tags">
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Computer Vision</span>
+                <span class="proj-tag">IoT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Conversão 2D para 3D (em breve) -->
+          <article class="proj-card proj-card-soon" data-cat="data" tabindex="0">
+            <div class="proj-card-img">
+              <div class="img-placeholder" aria-hidden="true">3D</div>
+              <div class="proj-soon-overlay">
+                <span class="proj-soon-badge" data-i18n="proj_coming_soon">Em breve</span>
+              </div>
+            </div>
+            <div class="proj-card-body">
+              <div class="proj-card-meta">
+                <span class="proj-badge data" data-i18n="p4_badge">Automação Gráfica</span>
+                <span class="proj-card-num">04</span>
+              </div>
+              <h3 class="proj-title" data-i18n="p4_title">Conversão 2D → 3D</h3>
+              <p class="proj-desc" data-i18n="p4_desc">Ferramenta técnica capaz de converter automaticamente ficheiros de imagens 2D em modelos tridimensionais (3D).</p>
+              <div class="proj-tags">
+                <span class="proj-tag">Python</span>
+                <span class="proj-tag">Computer Vision</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-actions reveal">
+          <button id="btn-load-more" type="button" class="btn btn-ghost" data-i18n="projects_more">Ver mais projetos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contacto ===== -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-header reveal">
+          <p class="mono-tag">$ ping pedro --reach</p>
+          <h2 class="contact-hero-title" id="contact-heading" data-i18n="contact_hero_title">Tens um desafio?<br><span class="text-accent">Vamos conversar.</span></h2>
+          <p class="contact-hero-desc" data-i18n="contact_hero_desc">Quer seja um novo projeto, automação de processos ou segurança do teu sistema, estou disponível para ajudar.</p>
+        </div>
+
+        <div class="contact-layout reveal">
+          <form class="contact-form" id="contact-form">
+            <input type="hidden" name="access_key" value="16e98da9-19c1-43b0-87d3-40796d318d2a">
+            <input type="hidden" name="subject" value="Novo contacto via portfólio — pedrolourenco.pt">
+            <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-label="Não preencher este campo">
+
+            <div class="form-row">
+              <label for="cf-name" data-i18n="contact_form_name">Nome</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required data-i18n-attr="placeholder:contact_ph_name">
+            </div>
+
+            <div class="form-row">
+              <label for="cf-email" data-i18n="contact_form_email">Email</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required data-i18n-attr="placeholder:contact_ph_email">
+            </div>
+
+            <div class="form-row">
+              <label for="cf-message" data-i18n="contact_form_message">Mensagem</label>
+              <textarea id="cf-message" name="message" rows="5" required data-i18n-attr="placeholder:contact_ph_message"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit">Enviar</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-side">
+            <a href="mailto:contact@pedrolourenco.pt" class="contact-email-card">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="email-text">contact@pedrolourenco.pt</span>
+            </a>
+
+            <div class="contact-map" id="contact-map" role="img" aria-label="Mapa — Évora, Portugal" data-i18n-attr="aria-label:contact_map_aria"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">Pedro<span class="logo-dot">.</span>Lourenço</a>
+          <p class="footer-tagline" data-i18n="footer_tagline">Desenvolvedor focado em automação, segurança e eficiência.</p>
+          <div class="footer-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="hero_status">Disponível para novos projetos</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h3 data-i18n="footer_links_title">Navegação</h3>
+          <ul>
+            <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+            <li><a href="#projects" data-i18n="nav_projects">Projetos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-socials">
+          <h3 data-i18n="nav_contact">Contactos</h3>
+          <a href="mailto:contact@pedrolourenco.pt" class="footer-email">contact@pedrolourenco.pt</a>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/pedrolourenco5/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8.5h4.6V23H.2V8.5zM8.4 8.5h4.4v1.98h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.9h-4.6v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.16v8.04H8.4V8.5z"/></svg>
+            </a>
+            <a href="https://github.com/pedrolourencoo" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.06 11.06 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A10.52 10.52 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy" data-i18n="footer_copy">© 2026 Pedro Lourenço. Todos os direitos reservados.</p>
+        <p class="footer-made" data-i18n="footer_made">Desenvolvido com código em Évora, Portugal.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão de voltar ao topo -->
+  <button id="back-to-top" type="button" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo" data-i18n-attr="aria-label:aria_back_top,title:aria_back_top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>
